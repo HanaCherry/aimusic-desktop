@@ -1,0 +1,19 @@
+node_modules/
+release/
+verification.json
+cache-verification.json
+*.log
+.env
+.env.*
+!.env.example
+settings.json
+local-profile.json
+Cookies
+Cookies-journal
+Local Storage/
+Session Storage/
+Cache/
+Code Cache/
+GPUCache/
+userData/
+*.dmp

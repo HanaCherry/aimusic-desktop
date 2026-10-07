@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'none'; object-src 'none'; base-uri 'none'; frame-src 'none'">
+  <title>AI Music Desktop</title><link rel="stylesheet" href="style.css">
+</head>
+<body data-theme="galaxy">
+  <canvas id="sky" aria-hidden="true"></canvas>
+  <header>
+    <div class="brand"><div class="mark"><img src="../assets/service-logo.svg" alt="AI Music"></div><h1>AI Music <span>Desktop</span></h1><span class="appBadge">STUDIO</span></div>
+    <div class="tools"><button id="minimize" aria-label="Réduire la fenêtre">−</button><button id="maximize" aria-label="Agrandir ou restaurer la fenêtre">□</button><button id="close-window" aria-label="Fermer l’application">×</button></div>
+  </header>
+  <div class="appSidebar" role="navigation" aria-label="Navigation de l’application">
+    <div class="studioIdentity"><img id="identityAvatar" src="../assets/service-logo.svg" alt="Photo locale"><div><span id="profileNickname">Votre studio</span><small>AI MUSIC DESKTOP</small></div></div>
+    <p class="sidebarLabel">ESPACE MUSICAL</p>
+    <button data-studio="app" class="studioLink selected"><span>♫</span>Créer de la musique</button>
+    <button data-studio="library" class="studioLink"><span>▤</span>Bibliothèque</button>
+    <p class="sidebarLabel toolsLabel">OUTILS DE CRÉATION</p>
+    <button data-studio="ai-lyrics-generator" class="studioLink"><span>≡</span>Écrire des paroles</button>
+    <button data-studio="sound-effect" class="studioLink"><span>⌁</span>Effets sonores</button>
+    <button data-studio="vocal-remover" class="studioLink"><span>◉</span>Isoler la voix</button>
+    <button data-studio="stem-splitter" class="studioLink"><span>☷</span>Séparer les pistes</button>
+    <div class="sidebarBottom"><button data-studio="credits" class="creditBalance"><span>Mes crédits</span><strong id="creditsCount">—</strong><small id="creditsDetail">Connexion requise</small></button><button id="account" class="studioLink"><img id="accountAvatar" src="../assets/service-logo.svg" alt="">Mon compte</button><button id="settings" class="studioLink" aria-expanded="false" aria-controls="panel"><span>⚙</span>Paramètres</button><div class="sidebarSignature">Un espace pour vos idées.<span>v0.4.0 · non officiel</span></div></div>
+  </div>
+  <nav aria-label="Commandes du studio"><div class="workspaceTitle"><p class="eyebrow" id="workspaceEyebrow">CRÉATION MUSICALE</p><h2 id="workspaceHeading">Donnez vie à vos idées.</h2></div><div class="navButtons"><button id="settingsShortcut">⚙ Paramètres</button></div></nav>
+  <main><div id="placeholder"><span class="orbit">✦</span><h2>Préparation du studio…</h2><p>Vos outils de création seront prêts dans un instant.</p></div></main>
+  <aside id="panel" hidden aria-label="Paramètres de l’application">
+    <div class="panelTitle"><div><p class="eyebrow">FAITES COMME CHEZ VOUS</p><h2>Un studio à votre image</h2><p>Choisissez une ambiance, ajustez les détails.</p></div><button id="close" aria-label="Fermer les paramètres">← Retour au studio</button></div>
+    <div class="settingsGrid"><section class="settingsCard"><fieldset><legend>Votre ambiance</legend><div class="themes">
+      <button data-theme="official" class="theme official"><img src="../assets/service-logo.svg" alt="">Officiel<small>Les couleurs d’AI Music</small></button>
+      <button data-theme="galaxy" class="theme galaxy"><span>✦</span>Galaxy<small>Étoiles & nébuleuse</small></button>
+      <button data-theme="music" class="theme music"><span>♫</span>Musique<small>Étoiles sur les basses</small></button>
+      <button data-theme="night" class="theme night"><span>☾</span>Nuit<small>Simple & discret</small></button>
+      <button data-theme="light" class="theme light"><span>☀</span>Clair<small>Doux & lumineux</small></button>
+    </div></fieldset>
+    <label class="range" for="size">Taille des étoiles <output id="sizeValue"></output><input id="size" type="range" min="8" max="48" step="1"></label>
+    <label class="range" for="density">Nombre d’étoiles <output id="densityValue"></output><input id="density" type="range" min="15" max="100" step="1"></label>
+    <label class="check"><input id="motion" type="checkbox"><span>Animations décoratives<small>Désactiver pour une ambiance calme.</small></span></label>
+    </section><section class="settingsCard"><p class="eyebrow">AU RYTHME DE LA MUSIQUE</p><h3>Audio & couleurs</h3><label class="check"><input id="analysis" type="checkbox"><span>Réagir aux basses<small>Les étoiles suivent les basses du morceau. Aucun micro ni son système capturé.</small></span></label>
+    <label class="check"><input id="autoColor" type="checkbox"><span>Couleurs de la pochette<small>Lecteur et ambiance aux couleurs du morceau sélectionné.</small></span></label>
+    <div class="audioInfo"><strong id="audioTitle">Analyse désactivée</strong><p id="audioDetail">Activez l’analyse pour essayer la réaction aux basses.</p></div>
+    <label class="range" for="zoom">Zoom du site <output id="zoomValue"></output><input id="zoom" type="range" min="75" max="150" step="5"></label>
+    <p class="note">Les outils et la connexion restent ceux d’AI Music. La langue se choisit dans son menu.</p>
+    <button id="reset">Réinitialiser l’apparence</button><p id="saved" role="status"></p></section></div>
+    <section class="eqCard settingsCard" aria-label="Égaliseur et effets audio">
+      <div class="eqTitle"><div><p class="eyebrow">VOTRE SON</p><h3>Égaliseur & effets audio</h3></div><label class="check"><input id="eqEnabled" type="checkbox"><span>Activer le traitement</span></label></div>
+      <p class="note">Les réglages agissent sur la lecture uniquement. Vos fichiers restent inchangés. Les modes spatiaux sont une simulation stéréo pour casque.</p>
+      <div id="soundProfiles" class="soundProfiles"></div>
+      <div id="eqBands" class="eqBands"></div>
+      <div class="eqControls"><label class="range" for="eqPreamp">Préampli <output id="eqPreampValue"></output><input id="eqPreamp" type="range" min="-12" max="12" step="0.5"></label><label class="range" for="eqWidth">Largeur stéréo <output id="eqWidthValue"></output><input id="eqWidth" type="range" min="0" max="2" step="0.05"></label><label class="range" for="eqPan">Balance gauche / droite <output id="eqPanValue"></output><input id="eqPan" type="range" min="-1" max="1" step="0.05"></label><label class="range" for="eqPanRate">Vitesse auto-pan <output id="eqPanRateValue"></output><input id="eqPanRate" type="range" min="0.08" max="1.2" step="0.02"></label><label class="range" for="eqReverb">Réverbération <output id="eqReverbValue"></output><input id="eqReverb" type="range" min="0" max="0.45" step="0.01"></label><label class="range" for="eqEcho">Écho <output id="eqEchoValue"></output><input id="eqEcho" type="range" min="0" max="0.45" step="0.01"></label><label class="range" for="eqEchoTime">Temps de l’écho <output id="eqEchoTimeValue"></output><input id="eqEchoTime" type="range" min="0.12" max="0.7" step="0.01"></label></div>
+      <div class="eqTools"><label class="check"><input id="eqAutoPan" type="checkbox"><span>Auto-pan gauche ↔ droite</span></label><label class="check"><input id="eqLimiter" type="checkbox"><span>Limiter les crêtes</span></label><button id="eqBypass" aria-pressed="false">A/B · écouter l’original</button><button id="eqReset">Réinitialiser le son</button></div>
+      <canvas id="spectrum" width="1000" height="88" aria-label="Spectre du morceau"></canvas><p id="eqStatus" role="status">Traitement désactivé</p>
+      <div class="presetSave"><input id="presetName" type="text" maxlength="40" placeholder="Nom de votre réglage"><button id="savePreset">Enregistrer ce réglage</button></div><div id="userPresets" class="soundProfiles"></div>
+    </section>
+    <section class="settingsCard commandCard"><h3>Commandes du studio</h3><div class="commandButtons"><button id="back" title="Page précédente" aria-label="Page précédente">←</button><button id="forward" title="Page suivante" aria-label="Page suivante">→</button><button id="reload" title="Actualiser" aria-label="Actualiser">↻</button><button id="home" title="Revenir au studio" aria-label="Revenir au studio">⌂</button><span class="separator"></span><button id="sourceLayout" title="Afficher la présentation originale du service" aria-pressed="false">Vue du service</button><button id="browser" title="Ouvrir AI Music dans le navigateur" aria-label="Ouvrir AI Music dans le navigateur">↗</button></div></section>
+    <section class="cacheCard"><div><p class="eyebrow">STOCKAGE & DÉMARRAGE</p><h3>Cache du service</h3><p>Les ressources réutilisables restent sur cet ordinateur pour les prochaines ouvertures.</p><span id="cacheInfo" role="status">Calcul de la taille…</span></div><div><button id="clearCache">Vider le cache</button><p>Votre connexion et vos réglages sont conservés.</p></div></section>
+  </aside>
+  <aside id="profilePanel" hidden aria-label="Mon profil local">
+    <div class="panelTitle"><div><p class="eyebrow">MON COMPTE</p><h2>Votre profil, sur cet ordinateur.</h2><p>La photo et le pseudo restent ici. Ils ne modifient pas votre compte AI Music.</p></div><button id="closeProfile">← Retour au studio</button></div>
+    <form id="profileForm" class="profileCard">
+      <div class="profilePortrait"><img id="profilePhoto" src="../assets/service-logo.svg" alt="Votre photo locale"><label class="photoPicker" for="photoFile">Choisir une photo</label><input id="photoFile" type="file" accept="image/png,image/jpeg,image/webp" hidden><button id="removePhoto" type="button">Retirer la photo</button></div>
+      <div class="profileFields"><label for="nickname">Votre pseudo</label><input id="nickname" type="text" maxlength="40" placeholder="Votre nom dans ce studio" autocomplete="off"><p>Stockage local uniquement. Aucun envoi au service.</p><button type="submit" id="saveProfile">Enregistrer mon profil</button><span id="profileSaved" role="status"></span></div>
+    </form>
+    <section class="profileService"><div><h3>Compte AI Music</h3><p>Connexion, abonnement et réglages du service.</p></div><button id="serviceAccount">Ouvrir le compte AI Music</button></section>
+  </aside>
+  <svg class="iconDefs" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+    <symbol id="i-play" viewBox="0 0 24 24"><path d="M8 5v14l11-7z" fill="currentColor" stroke="none"/></symbol>
+    <symbol id="i-pause" viewBox="0 0 24 24"><rect x="6" y="5" width="4" height="14" rx="1" fill="currentColor" stroke="none"/><rect x="14" y="5" width="4" height="14" rx="1" fill="currentColor" stroke="none"/></symbol>
+    <symbol id="i-repeat" viewBox="0 0 24 24"><path d="M4 11V8a3 3 0 013-3h12m-3-3l3 3-3 3M20 13v3a3 3 0 01-3 3H5m3-3l-3 3 3 3"/></symbol>
+    <symbol id="i-rewind" viewBox="0 0 24 24"><path d="M5 8a9 9 0 11-1 7M5 3v5h5"/><text x="12" y="16" text-anchor="middle" font-size="8" fill="currentColor" stroke="none">15</text></symbol>
+    <symbol id="i-forward" viewBox="0 0 24 24"><path d="M19 8a9 9 0 101 7M19 3v5h-5"/><text x="12" y="16" text-anchor="middle" font-size="8" fill="currentColor" stroke="none">15</text></symbol>
+    <symbol id="i-heart" viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 00-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 00-7.8 7.8L12 21l8.8-8.6a5.5 5.5 0 000-7.8z"/></symbol>
+    <symbol id="i-share" viewBox="0 0 24 24"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="M8.6 10.5l6.8-4M8.6 13.5l6.8 4"/></symbol>
+    <symbol id="i-download" viewBox="0 0 24 24"><path d="M12 3v12m-4-4l4 4 4-4M5 16v4h14v-4"/></symbol>
+    <symbol id="i-volume" viewBox="0 0 24 24"><path d="M11 4L6 8H3v8h3l5 4zM15 8a6 6 0 010 8M18 5a10 10 0 010 14"/></symbol>
+  </svg>
+  <footer class="playerDock" aria-label="Lecteur de musique">
+    <div class="trackIdentity"><img id="trackCover" class="albumThumb" src="../assets/service-logo.svg" alt="Pochette du morceau"><div><p id="trackTitle">Aucune piste chargée</p><span id="trackArtist">Choisissez un morceau dans le studio</span></div></div>
+    <div class="playbackControls"><div class="transportButtons"><button id="playerRepeat" disabled aria-label="Mode de lecture" title="Mode de lecture"><svg><use href="#i-repeat"/></svg></button><button id="playerRewind" disabled aria-label="Reculer de 15 secondes"><svg><use href="#i-rewind"/></svg></button><button id="playerToggle" disabled aria-label="Lire la musique"><svg><use href="#i-play"/></svg></button><button id="playerForward" disabled aria-label="Avancer de 15 secondes"><svg><use href="#i-forward"/></svg></button></div><span id="positionTime">0:00</span><input id="playerProgress" aria-label="Position de lecture" type="range" min="0" max="1" step="0.1" value="0" disabled><span id="durationTime">0:00</span></div>
+    <div class="playerVolume"><svg><use href="#i-volume"/></svg><input id="playerVolume" aria-label="Volume du lecteur" type="range" min="0" max="1" step="0.01" value="1" disabled></div>
+    <div class="trackActions"><button id="playerFavorite" disabled aria-label="Ajouter aux favoris"><svg><use href="#i-heart"/></svg></button><button id="playerShare" disabled aria-label="Partager le morceau"><svg><use href="#i-share"/></svg></button><button id="playerDownload" disabled aria-label="Télécharger le morceau"><svg><use href="#i-download"/></svg></button></div>
+    <div class="playerStatus"><span id="load" role="status">Connexion au service…</span><span id="themeName">Galaxy</span></div><i id="dot" hidden></i><span id="audioStatus" hidden></span>
+  </footer>
+  <script src="audio-presets.js"></script>
+  <script src="renderer.js"></script>
+</body></html>
+
+

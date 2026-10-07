@@ -1,0 +1,56 @@
+{
+  "name": "aimusic-desktop-unofficial",
+  "productName": "AI Music Desktop",
+  "version": "0.4.0",
+  "description": "Fenêtre Windows indépendante et non officielle pour aimusic.so",
+  "author": "Independent Desktop Project",
+  "private": true,
+  "main": "main.cjs",
+  "scripts": {
+    "start": "electron .",
+    "test": "node --test tests/*.test.cjs",
+    "test:cache": "node tests/cache-persistence.cjs",
+    "dist": "electron-builder --win nsis --x64 --publish never"
+  },
+  "devDependencies": {
+    "electron": "42.11.3",
+    "electron-builder": "26.15.3"
+  },
+  "build": {
+    "appId": "local.aimusic.independent.desktop",
+    "productName": "AI Music Desktop",
+    "directories": {
+      "output": "release"
+    },
+    "files": [
+      "main.cjs",
+      "cache.cjs",
+      "policy.cjs",
+      "preload.cjs",
+      "site-preload.cjs",
+      "ui/**",
+      "assets/**",
+      "package.json",
+      "NOTICE.md",
+      "profile.cjs",
+      "palette.cjs",
+      "audio-settings.cjs"
+    ],
+    "win": {
+      "target": "nsis",
+      "icon": "assets/icon.ico",
+      "signExecutable": false
+    },
+    "nsis": {
+      "oneClick": false,
+      "perMachine": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "installerLanguages": [
+        "fr_FR"
+      ]
+    },
+    "artifactName": "AI-Music-Desktop-${version}-Installation.${ext}"
+  }
+}
