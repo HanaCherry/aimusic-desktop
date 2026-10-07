@@ -1,32 +1,107 @@
-# AI Music Desktop 0.4.0
+<p align="center"><img src="assets/icon.png" width="72" height="72" alt="AI Music"></p>
 
-Application Windows indépendante et non officielle pour https://aimusic.so/fr/app.
+<h1 align="center">AI Music Desktop</h1>
+<p align="center"><strong>Votre musique. Votre studio.</strong></p>
+<p align="center">Un espace Windows pour créer avec AI Music, écouter vos morceaux et façonner votre son.</p>
 
-Le studio utilise les vrais formulaires et commandes du service. Les crédits viennent du solde affiché par AI Music. Les commandes de navigation et la vue originale du service se trouvent dans Paramètres.
+<p align="center">
+  <a href="https://hanacherry.github.io/aimusic-desktop/?lang=fr"><img src="https://img.shields.io/badge/Website-32_languages-ae94e8?style=for-the-badge" alt="32 languages"></a>
+  <a href="https://github.com/HanaCherry/aimusic-desktop/releases/tag/v0.4.0"><img src="https://img.shields.io/badge/Windows-v0.4.0-8be5bd?style=for-the-badge&amp;logo=windows" alt="Windows 0.4.0"></a>
+  <a href="package.json"><img src="https://img.shields.io/badge/Electron-Desktop-91bad8?style=for-the-badge&amp;logo=electron" alt="Electron"></a>
+</p>
 
-## Nouveautés
+<p align="center"><a href="https://github.com/HanaCherry/aimusic-desktop/releases/download/v0.4.0/AI-Music-Desktop-0.4.0-Installation.exe"><strong>Télécharger pour Windows</strong></a> · <a href="https://hanacherry.github.io/aimusic-desktop/?lang=fr">Un studio qui vous ressemble</a> · <a href="https://github.com/HanaCherry/aimusic-desktop">Voir le code</a></p>
 
-- Pochette fixe dans un cadre arrondi, avec miniature près du titre dans le lecteur inférieur transparent.
-- Lecture/pause, retour et avance de 15 secondes, répétition, favori, partage et téléchargement reliés aux commandes du service.
-- Thème officiel et icône provenant des ressources publiques AI Music.
-- Couleurs du thème Musique et de la progression extraites de la pochette sélectionnée, en mémoire.
-- Mon compte : photo et pseudo locaux, distincts du compte AI Music. La photo est réduite à 256 pixels et reste dans le profil local.
-- Paramètres audio : dix bandes de 31 Hz à 16 kHz, préampli, profils, A/B, largeur stéréo, panoramique, auto-pan, réverbération, écho et spectre. Les profils personnalisés restent locaux.
+<details>
+<summary align="center">🌐 Français · 32 languages</summary>
+<p align="center">
+<a href="README.md" lang="fr">Français</a> ·
+<a href="README.en.md" lang="en">English</a> ·
+<a href="README.es.md" lang="es">Español</a> ·
+<a href="README.pt.md" lang="pt">Português</a> ·
+<a href="README.de.md" lang="de">Deutsch</a> ·
+<a href="README.it.md" lang="it">Italiano</a> ·
+<a href="README.ja.md" lang="ja">日本語</a> ·
+<a href="README.ko.md" lang="ko">한국어</a> ·
+<a href="README.zh.md" lang="zh">简体中文</a> ·
+<a href="README.zh-TW.md" lang="zh-TW">繁體中文</a> ·
+<a href="README.ar.md" lang="ar">العربية</a> ·
+<a href="README.ru.md" lang="ru">Русский</a> ·
+<a href="README.hi.md" lang="hi">हिन्दी</a> ·
+<a href="README.tr.md" lang="tr">Türkçe</a> ·
+<a href="README.pl.md" lang="pl">Polski</a> ·
+<a href="README.nl.md" lang="nl">Nederlands</a> ·
+<a href="README.id.md" lang="id">Bahasa Indonesia</a> ·
+<a href="README.vi.md" lang="vi">Tiếng Việt</a> ·
+<a href="README.th.md" lang="th">ไทย</a> ·
+<a href="README.uk.md" lang="uk">Українська</a> ·
+<a href="README.sv.md" lang="sv">Svenska</a> ·
+<a href="README.cs.md" lang="cs">Čeština</a> ·
+<a href="README.ro.md" lang="ro">Română</a> ·
+<a href="README.el.md" lang="el">Ελληνικά</a> ·
+<a href="README.hu.md" lang="hu">Magyar</a> ·
+<a href="README.fi.md" lang="fi">Suomi</a> ·
+<a href="README.da.md" lang="da">Dansk</a> ·
+<a href="README.no.md" lang="no">Norsk</a> ·
+<a href="README.he.md" lang="he">עברית</a> ·
+<a href="README.ca.md" lang="ca">Català</a> ·
+<a href="README.ms.md" lang="ms">Bahasa Melayu</a> ·
+<a href="README.tl.md" lang="tl">Filipino</a>
+</p>
+</details>
 
-## Audio et vérification
+<p align="center"><img src="docs/studio.svg" alt="AI Music Desktop" width="1100"></p>
+<p align="center"><sub>Illustration de l’interface — aucune donnée de compte utilisée.</sub></p>
 
-Les effets activés utilisent un graphe Web Audio sur le véritable élément audio du lecteur. Le mode A/B revient au signal original. Le thème Musique réagit aux basses mesurées entre 35 et 180 Hz ; sans signal accessible, les étoiles restent immobiles et les paramètres indiquent cet état. Les contraintes normales du navigateur et du serveur audio sont conservées.
+## Un studio qui vous ressemble
 
-Les tests Electron utilisent un profil temporaire, un morceau synthétique et une page de service simulée. Ils vérifient les commandes, la pochette et sa palette, le profil local, les dix bandes, la réponse réelle des filtres, les effets et le bypass. Ils ne prouvent pas la compatibilité de chaque morceau distant. Aucun achat ni génération de chanson n'est effectué par ces tests.
+- **Lecteur intégré** — Pochette fixe, barre transparente, progression colorée et commandes de lecture réunies en bas.
 
-## Données et cache
+- **Couleurs &amp; ambiance** — Galaxy, Musique, Nuit, Clair et Officiel. Les couleurs de la pochette accompagnent votre écoute.
 
-Profil : %APPDATA%/AIMusicDesktopIndependent. Cookies du service, cache disque, settings.json et local-profile.json restent dans ce profil propre. Aucun profil SunoApp ou navigateur n'est importé. Nettoyer le cache dans Paramètres conserve les cookies et préférences. La connexion Internet reste nécessaire.
+- **Égaliseur &amp; effets** — Dix bandes, préampli, profils, A/B, largeur stéréo, panoramique, auto-pan, réverbération, écho et spectre.
+
+- **Votre profil, en local** — Ajoutez une photo et un pseudo. Vos préférences et profils audio restent sur votre ordinateur.
+
+- **Cache au démarrage** — Un cache disque réutilise les ressources disponibles. Son nettoyage conserve la session et les réglages.
+
+- **Crédits visibles** — Consultez le solde fourni par AI Music et retrouvez les vrais outils de création du service.
+
+## Prêt à ouvrir votre studio ?
+
+1. Téléchargez l’installateur Windows depuis la release. → [v0.4.0](https://github.com/HanaCherry/aimusic-desktop/releases/tag/v0.4.0)
+2. Lancez le fichier .exe et suivez l’installation.
+3. Ouvrez AI Music Desktop ; connectez-vous au service si nécessaire.
+
+> Installateur non signé : Windows peut afficher un avertissement.
+
+## Un projet indépendant
+
+Application non officielle, sans affiliation avec AI Music. Internet est nécessaire. Les effets et l’analyse dépendent de l’accès au flux audio ; les tests synthétiques ne garantissent pas chaque morceau distant.
+
+Cette présentation est disponible en 32 langues. L’interface locale du logiciel est actuellement en français ; la langue du service se choisit dans son menu.
+
+→ [NOTICE.md](NOTICE.md) · [aimusic.so](https://aimusic.so/fr/app)
 
 ## Développement
 
-Node.js 22.12+, pnpm et Electron : pnpm install --frozen-lockfile, puis node node_modules/electron/install.js.
+Node.js 22.12+ · pnpm · Windows x64
 
-Tests : node --test tests/*.test.cjs puis electron . --smoke-test. Aperçu isolé : electron . --preview. Construction : node node_modules/electron-builder/cli.js --win nsis --x64 --publish never.
+```sh
+git clone https://github.com/HanaCherry/aimusic-desktop.git
+cd aimusic-desktop
+pnpm install --frozen-lockfile
+node node_modules/electron/install.js
+pnpm start
+```
 
-Le logiciel et l'installateur ne sont pas signés. Voir NOTICE.md pour les ressources officielles et l'indépendance du projet.
+```sh
+pnpm test
+pnpm exec electron . --smoke-test
+pnpm exec electron . --preview
+pnpm dist
+```
+
+---
+
+<p align="center">AI Music Desktop · 0.4.0 · <a href="https://hanacherry.github.io/aimusic-desktop/?lang=fr">Votre musique. Votre studio.</a></p>

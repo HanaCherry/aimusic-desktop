@@ -1,0 +1,107 @@
+<p align="center"><img src="assets/icon.png" width="72" height="72" alt="AI Music"></p>
+
+<h1 align="center">AI Music Desktop</h1>
+<p align="center"><strong>เพลงของคุณ สตูดิโอของคุณ</strong></p>
+<p align="center">พื้นที่บน Windows สำหรับสร้างเพลงด้วย AI Music ฟังเพลงของคุณ และปรับแต่งเสียง</p>
+
+<p align="center">
+  <a href="https://hanacherry.github.io/aimusic-desktop/?lang=th"><img src="https://img.shields.io/badge/Website-32_languages-ae94e8?style=for-the-badge" alt="32 languages"></a>
+  <a href="https://github.com/HanaCherry/aimusic-desktop/releases/tag/v0.4.0"><img src="https://img.shields.io/badge/Windows-v0.4.0-8be5bd?style=for-the-badge&amp;logo=windows" alt="Windows 0.4.0"></a>
+  <a href="package.json"><img src="https://img.shields.io/badge/Electron-Desktop-91bad8?style=for-the-badge&amp;logo=electron" alt="Electron"></a>
+</p>
+
+<p align="center"><a href="https://github.com/HanaCherry/aimusic-desktop/releases/download/v0.4.0/AI-Music-Desktop-0.4.0-Installation.exe"><strong>ดาวน์โหลดสำหรับ Windows</strong></a> · <a href="https://hanacherry.github.io/aimusic-desktop/?lang=th">สตูดิโอที่เข้ากับคุณ</a> · <a href="https://github.com/HanaCherry/aimusic-desktop">ดูซอร์สโค้ด</a></p>
+
+<details>
+<summary align="center">🌐 ไทย · 32 languages</summary>
+<p align="center">
+<a href="README.md" lang="fr">Français</a> ·
+<a href="README.en.md" lang="en">English</a> ·
+<a href="README.es.md" lang="es">Español</a> ·
+<a href="README.pt.md" lang="pt">Português</a> ·
+<a href="README.de.md" lang="de">Deutsch</a> ·
+<a href="README.it.md" lang="it">Italiano</a> ·
+<a href="README.ja.md" lang="ja">日本語</a> ·
+<a href="README.ko.md" lang="ko">한국어</a> ·
+<a href="README.zh.md" lang="zh">简体中文</a> ·
+<a href="README.zh-TW.md" lang="zh-TW">繁體中文</a> ·
+<a href="README.ar.md" lang="ar">العربية</a> ·
+<a href="README.ru.md" lang="ru">Русский</a> ·
+<a href="README.hi.md" lang="hi">हिन्दी</a> ·
+<a href="README.tr.md" lang="tr">Türkçe</a> ·
+<a href="README.pl.md" lang="pl">Polski</a> ·
+<a href="README.nl.md" lang="nl">Nederlands</a> ·
+<a href="README.id.md" lang="id">Bahasa Indonesia</a> ·
+<a href="README.vi.md" lang="vi">Tiếng Việt</a> ·
+<a href="README.th.md" lang="th">ไทย</a> ·
+<a href="README.uk.md" lang="uk">Українська</a> ·
+<a href="README.sv.md" lang="sv">Svenska</a> ·
+<a href="README.cs.md" lang="cs">Čeština</a> ·
+<a href="README.ro.md" lang="ro">Română</a> ·
+<a href="README.el.md" lang="el">Ελληνικά</a> ·
+<a href="README.hu.md" lang="hu">Magyar</a> ·
+<a href="README.fi.md" lang="fi">Suomi</a> ·
+<a href="README.da.md" lang="da">Dansk</a> ·
+<a href="README.no.md" lang="no">Norsk</a> ·
+<a href="README.he.md" lang="he">עברית</a> ·
+<a href="README.ca.md" lang="ca">Català</a> ·
+<a href="README.ms.md" lang="ms">Bahasa Melayu</a> ·
+<a href="README.tl.md" lang="tl">Filipino</a>
+</p>
+</details>
+
+<p align="center"><img src="docs/studio.svg" alt="AI Music Desktop" width="1100"></p>
+<p align="center"><sub>ภาพประกอบส่วนติดต่อ ไม่ใช้ข้อมูลบัญชี</sub></p>
+
+## สตูดิโอที่เข้ากับคุณ
+
+- **เครื่องเล่นในตัว** — ปกอัลบั้มคงที่ แถบโปร่งใส แถบความคืบหน้ามีสี และปุ่มเล่นรวมอยู่ด้านล่าง
+
+- **สีและบรรยากาศ** — ธีม Galaxy, Music, Night, Light และ Official พร้อมสีจากปกอัลบั้มระหว่างฟัง
+
+- **อีควอไลเซอร์และเอฟเฟกต์** — สิบย่านเสียง พรีแอมป์ พรีเซ็ต A/B ความกว้างสเตอริโอ แพน ออโต้แพน รีเวิร์บ เอคโค และสเปกตรัม
+
+- **โปรไฟล์ในเครื่อง** — เพิ่มรูปและชื่อเล่น การตั้งค่าและพรีเซ็ตเสียงเก็บไว้บนคอมพิวเตอร์ของคุณ
+
+- **แคชเมื่อเริ่มต้น** — แคชบนดิสก์นำทรัพยากรที่มีมาใช้ซ้ำ การล้างแคชยังคงเก็บเซสชันและการตั้งค่า
+
+- **แสดงเครดิต** — ดูยอดคงเหลือจาก AI Music และใช้เครื่องมือสร้างเพลงจริงของบริการ
+
+## พร้อมเปิดสตูดิโอหรือยัง?
+
+1. ดาวน์โหลดตัวติดตั้ง Windows จากหน้าเผยแพร่ → [v0.4.0](https://github.com/HanaCherry/aimusic-desktop/releases/tag/v0.4.0)
+2. เปิดไฟล์ .exe และทำตามขั้นตอนติดตั้ง
+3. เปิด AI Music Desktop และเข้าสู่บริการหากจำเป็น
+
+> ตัวติดตั้งไม่มีลายเซ็นดิจิทัล Windows อาจแสดงคำเตือน
+
+## โครงการอิสระ
+
+แอปไม่เป็นทางการและไม่มีความเกี่ยวข้องกับ AI Music ต้องใช้อินเทอร์เน็ต เอฟเฟกต์และการวิเคราะห์ขึ้นอยู่กับการเข้าถึงสตรีมเสียง การทดสอบเสียงสังเคราะห์ไม่รับประกันเพลงออนไลน์ทุกเพลง
+
+หน้าแนะนำนี้มี 32 ภาษา ส่วนติดต่อในเครื่องของแอปยังเป็นภาษาฝรั่งเศส เลือกภาษาของบริการได้ในเมนูของบริการ
+
+→ [NOTICE.md](NOTICE.md) · [aimusic.so](https://aimusic.so/fr/app)
+
+## การพัฒนา
+
+Node.js 22.12+ · pnpm · Windows x64
+
+```sh
+git clone https://github.com/HanaCherry/aimusic-desktop.git
+cd aimusic-desktop
+pnpm install --frozen-lockfile
+node node_modules/electron/install.js
+pnpm start
+```
+
+```sh
+pnpm test
+pnpm exec electron . --smoke-test
+pnpm exec electron . --preview
+pnpm dist
+```
+
+---
+
+<p align="center">AI Music Desktop · 0.4.0 · <a href="https://hanacherry.github.io/aimusic-desktop/?lang=th">เพลงของคุณ สตูดิโอของคุณ</a></p>
